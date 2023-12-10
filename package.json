@@ -1,7 +1,7 @@
 {
   "name": "aa360-ra",
   "version": "0.1.0",
-  "homepage": "https://anthonylorraine.github.io/aa360-rh",
+  "homepage": "https://anthonylorraine.github.io/aa360-ra",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
