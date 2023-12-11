@@ -9,7 +9,7 @@ const Layout = () => {
         <>
             <Navbar className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand as={Link} to={"/"}>
+                    <Navbar.Brand as={Link} to={"/aa360-ra"}>
                         <img
                             alt="Automation Anywhere Guides Logo"
                             src={brandImage}
@@ -19,6 +19,11 @@ const Layout = () => {
                         />
                         A360 Guides
                     </Navbar.Brand>
+                    <Nav className="me-auto ms-5">
+                        <Nav.Link as={Link} to={"/aa360-ra"}>Home</Nav.Link>
+                        <Nav.Link as={Link} to={"/aa360-ra/date-time-formats"}>DateTime Formats</Nav.Link>
+                        <Nav.Link href="/aa360-ra">Guides</Nav.Link>
+                    </Nav>
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item dropdown">
                             <button className="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center" id="theme-selector" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static"
