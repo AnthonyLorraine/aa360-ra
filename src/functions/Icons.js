@@ -3,57 +3,57 @@ export const getIconByType = (variable) => {
 
   switch (lowerCaseVariable) {
     case "application":
-      return "bi bi-terminal text-primary"
+      return "bi bi-terminal text-primary-emphasis"
     case "boolean":
-      return "bi bi-flag-fill text-primary";
+      return "bi bi-flag-fill text-primary-emphasis";
     case "comment":
-      return "bi bi-chat-left-quote text-success";
+      return "bi bi-chat-left-quote text-success-emphasis";
     case "csvtxt":
-      return "bi bi-filetype-csv text-primary";
+      return "bi bi-filetype-csv text-primary-emphasis";
     case "database":
-      return "bi bi-database text-primary";
+      return "bi bi-database text-primary-emphasis";
     case "email":
-      return "bi bi-envelope text-primary";
+      return "bi bi-envelope text-primary-emphasis";
     case "errorhandler":
       return "bi bi-exclamation-triangle text-danger";
     case "excel_ms":
-      return "bi bi-filetype-xlsx text-success"
+      return "bi bi-filetype-xlsx text-success-emphasis"
     case "datetime":
-      return "bi bi-calendar-event text-primary"
+      return "bi bi-calendar-event text-primary-emphasis"
     case "dictionary":
-      return "bi bi-journals text-primary";
+      return "bi bi-journals text-primary-emphasis";
     case "file":
-      return "bi bi-file-earmark text-primary";
+      return "bi bi-file-earmark text-primary-emphasis";
     case "if":
       return "bi bi-diamond text-warning"
     case "keystrokes":
-      return "bi bi-keyboard text-primary"
+      return "bi bi-keyboard text-primary-emphasis"
     case "legacyautomation":
       return "bi bi-slash-square text-muted"
     case "logtofile":
-      return "bi bi-filetype-txt text-primary"
+      return "bi bi-filetype-txt text-primary-emphasis"
     case "loop":
       return "bi bi-arrow-clockwise text-purple";
     case "list":
-      return "bi bi-list-ol text-primary";
+      return "bi bi-list-ol text-primary-emphasis";
     case "messagebox":
-      return "bi bi-window-desktop text-primary";
+      return "bi bi-window-desktop text-primary-emphasis";
     case "number":
-      return "bi bi-hash text-primary";
+      return "bi bi-hash text-primary-emphasis";
     case "record":
-      return "bi bi-tablet-landscape text-primary";
+      return "bi bi-tablet-landscape text-primary-emphasis";
     case "recorder":
-      return "bi bi-camera-video text-primary"
+      return "bi bi-camera-video text-primary-emphasis"
     case "string":
-      return "bi bi-quote text-primary";
+      return "bi bi-quote text-primary-emphasis";
     case "table":
-      return "bi bi-table text-primary";
+      return "bi bi-table text-primary-emphasis";
     case "taskbot":
-      return "bi bi-wrench-adjustable-circle text-primary";
+      return "bi bi-wrench-adjustable-circle text-primary-emphasis";
     case "delay":
-      return "bi bi-stopwatch text-primary";
+      return "bi bi-stopwatch text-primary-emphasis";
     case "window":
-      return "bi bi-window text-primary";
+      return "bi bi-window text-primary-emphasis";
     default:
       return "";
   }

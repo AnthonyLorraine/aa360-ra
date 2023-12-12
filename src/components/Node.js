@@ -5,14 +5,21 @@ const Node = ({node}) => {
 
     return (
         <>
-            <NodeRenderer node={node}/>
-            {
-                node?.children ?
-                    (<NodeList nodes={node.children}/>) : ("")
-            }
+            <li>
+                <NodeRenderer node={node}/>
+                {
+                    node?.children ?
+                        (<NodeList nodes={node.children}/>) : ("")
+                }
+                {
+                    node?.branches ?
+                        node.branches.map((branchNode, index) => (
+                            <Node key={index} node={branchNode}/>
+                        )): ("")
+                }
+            </li>
         </>
     )
 }
-
 
 export default Node;
