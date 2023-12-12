@@ -23,6 +23,7 @@ const Layout = () => {
                         <Nav.Link as={Link} to={"/aa360-ra"}>Home</Nav.Link>
                         <Nav.Link as={Link} to={"/aa360-ra/date-time-formats"}>DateTime Formats</Nav.Link>
                         <Nav.Link href="/aa360-ra">Guides</Nav.Link>
+                        <Nav.Link href="/aa360-ra/code">Code Viewer</Nav.Link>
                     </Nav>
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item dropdown">
