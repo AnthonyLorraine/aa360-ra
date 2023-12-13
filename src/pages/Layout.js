@@ -2,7 +2,7 @@ import {Link, Outlet} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import brandImage from "../static/media/logo512.png";
-import {Button, Nav, NavDropdown} from "react-bootstrap";
+import {Nav} from "react-bootstrap";
 
 const Layout = () => {
     return (
@@ -59,7 +59,7 @@ const Layout = () => {
                     </ul>
                 </Container>
             </Navbar>
-            <Container className={"mt-5"}>
+            <Container className={"mt-3"}>
                 <Outlet/>
             </Container>
         </>
