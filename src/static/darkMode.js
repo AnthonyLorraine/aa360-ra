@@ -4,33 +4,17 @@
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */
 
-(() => {
-  'use strict'
-
-  const storedTheme = localStorage.getItem('theme')
-
-  const getPreferredTheme = () => {
-    if (storedTheme) {
-      return storedTheme
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-
-  const setTheme = function (theme) {
+export const setTheme = function (theme) {
     if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-bs-theme', 'dark')
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
     } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
+        document.documentElement.setAttribute('data-bs-theme', theme)
     }
-  }
-
-  setTheme(getPreferredTheme())
-
-  const showActiveTheme = (theme, focus = false) => {
+}
+export const showActiveTheme = (theme, focus = false) => {
     const themeSwitcher = document.querySelector('#theme-selector')
     if (!themeSwitcher) {
-      return
+        return
     }
 
     const themeSwitcherText = document.querySelector('#toggle-theme-text')
@@ -39,9 +23,9 @@
     const selectedThemeIcon = btnToActive.querySelector('i');
     const btnToActiveCheckMarkIcon = btnToActive.children[1];
     document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-      element.classList.remove('active')
-      element.children[1].classList.add('d-none')
-      element.setAttribute('aria-pressed', 'false')
+        element.classList.remove('active')
+        element.children[1].classList.add('d-none')
+        element.setAttribute('aria-pressed', 'false')
     })
     btnToActiveCheckMarkIcon.classList.remove('d-none')
     btnToActive.classList.add('active')
@@ -53,27 +37,40 @@
     themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
     if (focus) {
-      themeSwitcher.focus()
+        themeSwitcher.focus()
     }
-  }
+}
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if (storedTheme !== 'light' || storedTheme !== 'dark') {
-      setTheme(getPreferredTheme())
+export const getPreferredTheme = () => {
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme) {
+        return storedTheme
     }
-  })
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
 
-  window.addEventListener('DOMContentLoaded', () => {
-    showActiveTheme(getPreferredTheme())
+(() => {
+    'use strict'
+    let storedTheme = getPreferredTheme()
+    setTheme(storedTheme)
 
-    document.querySelectorAll('[data-bs-theme-value]')
-      .forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const theme = toggle.getAttribute('data-bs-theme-value')
-          localStorage.setItem('theme', theme)
-          setTheme(theme)
-          showActiveTheme(theme, true)
-        })
-      })
-  })
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (storedTheme !== 'light' || storedTheme !== 'dark') {
+            setTheme(getPreferredTheme())
+        }
+    })
+
+    window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+        document.querySelectorAll('[data-bs-theme-value]')
+            .forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const theme = toggle.getAttribute('data-bs-theme-value')
+                    localStorage.setItem('theme', theme)
+                    setTheme(theme)
+                    showActiveTheme(theme, true)
+                })
+            })
+    })
 })()

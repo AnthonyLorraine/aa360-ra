@@ -14,7 +14,7 @@ function App() {
                 <Route path={"/aa360-ra"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path={"date-time-formats"} element={<DateTimeFormats/>}/>
-                    <Route path={"code"} element={<Code/>}/>
+                    <Route path={"code-viewer"} element={<Code/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

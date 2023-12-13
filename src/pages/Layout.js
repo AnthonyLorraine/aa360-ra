@@ -2,9 +2,35 @@ import {Link, Outlet} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import brandImage from "../static/media/logo512.png";
-import {Nav} from "react-bootstrap";
+import {Dropdown, DropdownButton, Nav, NavbarToggle} from "react-bootstrap";
+import {Button} from "bootstrap";
+import {getPreferredTheme, setTheme, showActiveTheme} from "../static/darkMode";
 
 const Layout = () => {
+    const setThemeReactButton = (event) => {
+        let toggle = event.target
+        const theme = toggle.getAttribute('data-bs-theme-value')
+        localStorage.setItem('theme', theme)
+        setTheme(theme)
+        showActiveTheme(theme, true)
+    }
+    let currentTheme = getPreferredTheme()
+    let currentThemeIcon = ""
+    switch (currentTheme){
+        case "dark":
+            currentThemeIcon = "bi-moon-stars-fill"
+            break;
+        case "light":
+            currentThemeIcon = "bi-sun-fill"
+            break;
+        case "auto":
+            currentThemeIcon = "bi-circle-half"
+            break;
+        default:
+            currentThemeIcon = "bi-sun-fill"
+            break
+    }
+
     return (
         <>
             <Navbar className="bg-body-tertiary">
@@ -22,41 +48,49 @@ const Layout = () => {
                     <Nav className="me-auto ms-5">
                         <Nav.Link as={Link} to={"/aa360-ra"}>Home</Nav.Link>
                         <Nav.Link as={Link} to={"/aa360-ra/date-time-formats"}>DateTime Formats</Nav.Link>
-                        <Nav.Link href="/aa360-ra">Guides</Nav.Link>
-                        <Nav.Link href="/aa360-ra/code">Code Viewer</Nav.Link>
+                        <Nav.Link as={Link} to="/aa360-ra">Guides</Nav.Link>
+                        <Nav.Link as={Link} to="/aa360-ra/code-viewer">Code Viewer</Nav.Link>
                     </Nav>
-                    <ul className="navbar-nav mb-2 mb-lg-0">
-                        <li className="nav-item dropdown">
-                            <button className="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center" id="theme-selector" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static"
-                                    aria-label="Toggle theme">
-                                <i className="bi bi-sun-fill" id="current-theme-icon"></i>
+                    <Nav className={"mb-2 mb-lg-0"}>
+                        <Dropdown>
+                            <Dropdown.Toggle as={'li'}
+                                             bsPrefix={"dropdown"}
+                                             id="theme-selector"
+                                             data-bs-display="static"
+                                             aria-label="Toggle theme"
+                            >
+                                <i className={"bi " + currentThemeIcon} id="current-theme-icon"></i>
                                 <span className="d-lg-none ms-2" id="toggle-theme-text">Toggle theme</span>
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="toggle-theme-text">
-                                <li>
-                                    <button type="button" className="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
-                                        <i className="bi bi-sun-fill me-2 opacity-50"></i>
-                                        Light
-                                        <i className="bi bi-check2 ms-auto"></i>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                                        <i className="bi bi-moon-stars-fill me-2 opacity-50"></i>
-                                        Dark
-                                        <i className="bi bi-check2 ms-auto"></i>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
-                                        <i className="bi bi-circle-half me-2 opacity-50"></i>
-                                        Auto
-                                        <i className="bi bi-check2 ms-auto"></i>
-                                    </button>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu as={"ul"} align={"end"} aria-labelledby="toggle-theme-text">
+                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                               data-bs-theme-value="light"
+                                               onClick={setThemeReactButton}>
+                                    <i className="bi bi-sun-fill me-2 opacity-50"></i>
+                                    Light
+                                    {currentTheme === "light" ?
+                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                </Dropdown.Item>
+                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                               data-bs-theme-value="dark"
+                                               onClick={setThemeReactButton}>
+                                    <i className="bi bi-moon-stars-fill me-2 opacity-50"></i>
+                                    Dark
+                                    {currentTheme === "dark" ?
+                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                </Dropdown.Item>
+                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                               data-bs-theme-value="auto"
+                                               onClick={setThemeReactButton}>
+                                    <i className="bi bi-circle-half me-2 opacity-50"></i>
+                                    Auto
+                                    {currentTheme === "auto" ?
+                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Nav>
                 </Container>
             </Navbar>
             <Container className={"mt-3"}>
