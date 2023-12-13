@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/aa360-ra/static/css/main.3129ea0b.css",
-    "main.js": "/aa360-ra/static/js/main.36e458f0.js",
+    "main.js": "/aa360-ra/static/js/main.e6abb566.js",
     "static/media/logo512.png": "/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png",
     "index.html": "/aa360-ra/index.html",
     "main.3129ea0b.css.map": "/aa360-ra/static/css/main.3129ea0b.css.map",
-    "main.36e458f0.js.map": "/aa360-ra/static/js/main.36e458f0.js.map"
+    "main.e6abb566.js.map": "/aa360-ra/static/js/main.e6abb566.js.map"
   },
   "entrypoints": [
     "static/css/main.3129ea0b.css",
-    "static/js/main.36e458f0.js"
+    "static/js/main.e6abb566.js"
   ]
 }
