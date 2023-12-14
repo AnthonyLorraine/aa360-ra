@@ -93,7 +93,7 @@ const Layout = () => {
                     </Nav>
                 </Container>
             </Navbar>
-            <Container className={"mt-3"}>
+            <Container fluid className={"mt-3"}>
                 <Outlet/>
             </Container>
         </>

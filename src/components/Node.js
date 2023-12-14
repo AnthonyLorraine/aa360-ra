@@ -6,16 +6,18 @@ const Node = ({node}) => {
     return (
         <>
             <li>
-                <NodeRenderer node={node}/>
+                <NodeRenderer node={node} />
                 {
                     node?.children ?
-                        (<NodeList nodes={node.children}/>) : ("")
+                        (<NodeList nodes={node.children} />) : ("")
                 }
                 {
                     node?.branches ?
                         node.branches.map((branchNode, index) => (
-                            <Node key={index} node={branchNode}/>
-                        )): ("")
+                            <ul className={"list-unstyled"} key={index}>
+                                <Node node={branchNode} />
+                            </ul>
+                        )) : ("")
                 }
             </li>
         </>

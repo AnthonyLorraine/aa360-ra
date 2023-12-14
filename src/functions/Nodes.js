@@ -1,7 +1,7 @@
 import {getIconByType} from "./Icons";
 import {Col} from "react-bootstrap";
 
-const getRepositoryFriendlyName = (repositoryPath) => {
+export const getRepositoryFriendlyName = (repositoryPath) => {
     return decodeURIComponent(repositoryPath).replace("repository:///Automation Anywhere/", "")
 }
 const getFileFriendName = (filePath) => {
@@ -13,9 +13,6 @@ const getInformationHtml = (node) => {
     let icon = getIconByType(node.packageName)
     let spacingClass = " me-2"
     icon = icon + spacingClass
-
-    console.log(commandNamePackageName.toLowerCase())
-    console.log(node)
 
     switch (commandNamePackageName.toLowerCase()) {
         case "comment_comment":

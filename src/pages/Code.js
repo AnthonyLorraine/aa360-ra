@@ -1,10 +1,14 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Node from "../components/Node";
 import VariableList from "../components/VariableList";
+import PropertiesContext from "../context/PropertiesContext";
+import PropertyRenderer from "../components/PropertyRenderer";
+
 
 const Code = () => {
     const [loadedData, setLoadedData] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
+    const {currentProperty} = useContext(PropertiesContext);
 
     useEffect(() => {
         const fetchData = () => {
@@ -18,6 +22,7 @@ const Code = () => {
             }
         };
         fetchData();
+
     }, []);
 
     const handleFileChange = async (event) => {
@@ -66,7 +71,9 @@ const Code = () => {
         setLoadedData(null);
     };
 
-    return <>
+
+    return (<>
+
         {loadedData ? (
             <div className={"d-flex flex-column"}>
                 <div className={"d-flex justify-content-between"}>
@@ -77,25 +84,29 @@ const Code = () => {
                 </div>
 
                 <div className={"d-flex"}>
-                    <aside style={{flex: 1, height: "80vh", overflowY: "auto"}}>
+                    <aside style={{flex: 2, height: "80vh", overflowY: "auto"}}>
                         <VariableList variables={loadedData.variables}/>
                     </aside>
-                    <main style={{flex: 4, height: "80vh", overflowY: "auto"}} className={"me-3 pe-4"}>
+                    <main style={{flex: 6, height: "80vh", overflowY: "auto"}} className={"pe-4"}>
                         <ul className={"list-unstyled ms-5"}>
                             <Node node={loadedData.nodes[0]}/>
                         </ul>
                     </main>
-                    <aside style={{flex: 1, height: "80vh", overflowY: "auto"}}>Props</aside>
+                    <aside style={{flex: 3, height: "80vh", overflowY: "auto"}}>
+                        {currentProperty && (
+                            <PropertyRenderer/>
+                        )}
+                    </aside>
                 </div>
             </div>
         ) : (
             <>
                 <input type="file" onChange={handleFileChange}/>
-                Example:  <button className={"btn btn-link"} onClick={handleDownload}>Download example JSON file</button>
+                Example: <button className={"btn btn-link"} onClick={handleDownload}>Download example JSON file</button>
             </>
         )}
         {errorMessage ? (<p>Error... {errorMessage}</p>) : ("")}
-    </>;
+    </>);
 };
 
 export default Code;
