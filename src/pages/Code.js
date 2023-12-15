@@ -3,6 +3,7 @@ import Node from "../components/Node";
 import VariableList from "../components/VariableList";
 import PropertiesContext from "../context/PropertiesContext";
 import PropertyRenderer from "../components/PropertyRenderer";
+import NodeList from "../components/NodeList";
 
 
 const Code = () => {
@@ -89,7 +90,7 @@ const Code = () => {
                     </aside>
                     <main style={{flex: 6, height: "80vh", overflowY: "auto"}} className={"pe-4"}>
                         <ul className={"list-unstyled ms-5"}>
-                            <Node node={loadedData.nodes[0]}/>
+                            <NodeList nodes={loadedData.nodes} parentNode={{disabled: false}}/>
                         </ul>
                     </main>
                     <aside style={{flex: 3, height: "80vh", overflowY: "auto"}}>

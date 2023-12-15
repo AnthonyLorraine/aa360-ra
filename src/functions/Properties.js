@@ -16,7 +16,7 @@ const propertyAttributes = (attributes) => {
     )
 }
 const propertyReturnTo = (returnToList) => {
-    console.log(returnToList)
+
     if (typeof returnToList) {
 
     }
@@ -59,6 +59,8 @@ const getTextAreaRowCount = (text) => {
             rows_count += 1
         }
     }
+
+    rows_count = rows_count === 0 ? 1 : rows_count
   return  rows_count
 }
 const propertyHeader = (friendlyName, propertyDescription) => {
@@ -71,18 +73,16 @@ const propertyHeader = (friendlyName, propertyDescription) => {
         </div>
     );
     return <>
-        <Row className={"text-capitalize"}>
+        <Row key={friendlyName} className={"text-capitalize"}>
             {friendlyName}
         </Row>
-        <Row className={"small text-muted mt-4"}>
+        <Row key={friendlyName + "_desc"} className={"small text-muted mt-4"}>
             {descHtml}
         </Row>
     </>
 }
 const getPropertiesHtml = (node) => {
-    console.log(node)
     let commandNamePackageName = node.packageName + "_" + node.commandName
-    console.log(commandNamePackageName)
     let commandNamePackageNameFriendly = node.packageName + ": " + node.commandName
     switch (commandNamePackageName.toLowerCase()) {
         case "errorhandler_try":
@@ -99,11 +99,12 @@ const getPropertiesHtml = (node) => {
                 </Row>
             </>
         case "string_assign":
+            let sourceString = node.attributes[0].value.expression || node.attributes[0].value.string
             return <>
                 {propertyHeader(commandNamePackageNameFriendly, "Assigns or concatenates strings.")}
                 <Row className={"mt-3"}>
                     <span className={"small p-0"}>Source string</span>
-                    <textarea readOnly rows={getTextAreaRowCount(node.attributes[0].value.expression)} value={node.attributes[0].value.expression} className={"pb-2 pt-1 text-break text-wrap"}/>
+                    <textarea readOnly rows={getTextAreaRowCount(sourceString)} value={sourceString} className={"pb-2 pt-1 text-break text-wrap"}/>
                 </Row>
                 <hr/>
                 <Row className={"mt-3"}>
