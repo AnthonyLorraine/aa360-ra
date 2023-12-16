@@ -1,6 +1,6 @@
 const DateTimeFormats = () => {
     return <>
-        <section id="datetimeformat" className="">
+        <section id="datetimeformat" className="mt-5 container">
             <div className="row justify-content-center">
                 <div className="col-12 col-md-8">
                     <header className="h1">Common Formats</header>

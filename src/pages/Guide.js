@@ -13,9 +13,13 @@ const extractJsonDataFromAANode = (markdownText) => {
     let endIndex = markdownText.indexOf('\n```', startIndex);
     let jsonData = null
     let mdText = markdownText
-    if(startIndex > 0){
+    if (startIndex > 0) {
+
         jsonData = JSON.parse(markdownText.substring(startIndex + 10, endIndex))
         mdText = markdownText.substring(0, startIndex)
+        mdText = mdText + "_* See code example at the bottom of the page_"
+        mdText = mdText + markdownText.substring(endIndex + 4)
+
     }
     return {
         mdText: mdText,
@@ -42,16 +46,23 @@ const Guide = () => {
         aaCode = extractedData.jsonData
     }
 
+    function LinkRenderer(props) {
+        return (
+            <a href={props.href} target="_blank" rel="noreferrer">
+                {props.children}
+            </a>
+        );
+    }
 
     return (
         <>
-            <section id={"guide-container"} className={"container"}>
+            <section id={"guide-container"} className={"pb-5 container-md"}>
                 <MermaidRenderer/>
-                <ReactMarkdown className={"mt-5"}>
+                <ReactMarkdown className={"mt-5"} components={{a: LinkRenderer}}>
                     {mdText}
                 </ReactMarkdown>
             </section>
-            {aaCode ? (<section id={"aa-code-example"}><Code jsonData={aaCode} scriptTitle={"AA Code example: " + guideName.replaceAll('-', ' ')}/></section>) : ""}
+            {aaCode ? (<section id={"aa-code-example"} className={"p-md-2"}><Code jsonData={aaCode} scriptTitle={"AA Code example: " + guideName.replaceAll('-', ' ')}/></section>) : ""}
         </>
     )
 }

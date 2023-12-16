@@ -1,6 +1,6 @@
 const Home = () => {
     return <>
-        <section className="fs-5">
+        <section className="fs-5 mt-5 container">
             <p>Welcome to my Automation Anywhere Dev Journey!</p>
             <p>As I navigate the world of Automation Anywhere, I've compiled my insights, challenges, and breakthroughs into this space - my personal notes. Whether you're a seasoned developer or just starting out, join me on this journey
                 of exploration and learning.</p>

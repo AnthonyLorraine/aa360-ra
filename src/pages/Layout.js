@@ -16,7 +16,7 @@ const Layout = () => {
     }
     let currentTheme = getPreferredTheme()
     let currentThemeIcon = ""
-    switch (currentTheme){
+    switch (currentTheme) {
         case "dark":
             currentThemeIcon = "bi-moon-stars-fill"
             break;
@@ -33,7 +33,7 @@ const Layout = () => {
 
     return (
         <>
-            <Navbar className="bg-body-tertiary">
+            <Navbar expand="md" className="bg-body-tertiary">
                 <Container>
                     <Navbar.Brand as={Link} to={"/"}>
                         <img
@@ -45,55 +45,61 @@ const Layout = () => {
                         />
                         A360 Guides
                     </Navbar.Brand>
-                    <Nav className="me-auto ms-5">
-                        <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
-                        <Nav.Link as={Link} to={"/date-time-formats"}>DateTime Formats</Nav.Link>
-                        <Nav.Link as={Link} to="/guides">Guides</Nav.Link>
-                        <Nav.Link as={Link} to="/code-viewer">Code Viewer</Nav.Link>
-                    </Nav>
-                    <Nav className={"mb-2 mb-lg-0"}>
-                        <Dropdown>
-                            <Dropdown.Toggle as={'li'}
-                                             bsPrefix={"dropdown"}
-                                             id="theme-selector"
-                                             data-bs-display="static"
-                                             aria-label="Toggle theme"
-                            >
-                                <i className={"bi " + currentThemeIcon} id="current-theme-icon"></i>
-                                <span className="d-lg-none ms-2" id="toggle-theme-text">Toggle theme</span>
-                            </Dropdown.Toggle>
+                    <Navbar.Toggle aria-controls="navbarScroll"/>
+                    <Navbar.Collapse id="navbarScroll">
+                        <div className={"d-flex flex-column flex-md-row w-100 justify-content-md-between"}>
+                            <Nav>
+                                <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
+                                <Nav.Link as={Link} to={"/date-time-formats"}>DateTime Formats</Nav.Link>
+                                <Nav.Link as={Link} to="/guides">Guides</Nav.Link>
+                                <Nav.Link as={Link} to="/code-viewer">Code Viewer</Nav.Link>
+                            </Nav>
+                            <Nav className={"mb-2 mb-lg-0"}>
+                                <Dropdown>
+                                    <Dropdown.Toggle as={'li'}
+                                                     className={"nav-link"}
+                                                     bsPrefix={"dropdown"}
+                                                     id="theme-selector"
+                                                     data-bs-display="static"
+                                                     aria-label="Toggle theme"
+                                    >
+                                        <i className={"d-none d-md-block bi " + currentThemeIcon} id="current-theme-icon"></i>
+                                        <span className="d-md-none ms-md-2" id="toggle-theme-text">Toggle theme</span>
+                                    </Dropdown.Toggle>
 
-                            <Dropdown.Menu as={"ul"} align={"end"} aria-labelledby="toggle-theme-text">
-                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
-                                               data-bs-theme-value="light"
-                                               onClick={setThemeReactButton}>
-                                    <i className="bi bi-sun-fill me-2 opacity-50"></i>
-                                    Light
-                                    {currentTheme === "light" ?
-                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
-                                </Dropdown.Item>
-                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
-                                               data-bs-theme-value="dark"
-                                               onClick={setThemeReactButton}>
-                                    <i className="bi bi-moon-stars-fill me-2 opacity-50"></i>
-                                    Dark
-                                    {currentTheme === "dark" ?
-                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
-                                </Dropdown.Item>
-                                <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
-                                               data-bs-theme-value="auto"
-                                               onClick={setThemeReactButton}>
-                                    <i className="bi bi-circle-half me-2 opacity-50"></i>
-                                    Auto
-                                    {currentTheme === "auto" ?
-                                    <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Nav>
+                                    <Dropdown.Menu as={"ul"} align={"end"} aria-labelledby="toggle-theme-text">
+                                        <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                                       data-bs-theme-value="light"
+                                                       onClick={setThemeReactButton}>
+                                            <i className="bi bi-sun-fill me-2 opacity-50"></i>
+                                            Light
+                                            {currentTheme === "light" ?
+                                                <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                        </Dropdown.Item>
+                                        <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                                       data-bs-theme-value="dark"
+                                                       onClick={setThemeReactButton}>
+                                            <i className="bi bi-moon-stars-fill me-2 opacity-50"></i>
+                                            Dark
+                                            {currentTheme === "dark" ?
+                                                <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                        </Dropdown.Item>
+                                        <Dropdown.Item as={'button'} className={"dropdown-item d-flex align-items-center"}
+                                                       data-bs-theme-value="auto"
+                                                       onClick={setThemeReactButton}>
+                                            <i className="bi bi-circle-half me-2 opacity-50"></i>
+                                            Auto
+                                            {currentTheme === "auto" ?
+                                                <i className="bi bi-check2 ms-auto"></i> : <i className="bi bi-check2 ms-auto d-none"></i>}
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </Nav>
+                        </div>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Container fluid className={"mt-3"}>
+            <Container fluid={"md-fluid px-md-2"} className={"mt-md-3"}>
                 <Outlet/>
             </Container>
         </>

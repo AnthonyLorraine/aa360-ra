@@ -23,9 +23,10 @@
     padding-top: 3rem;
 }
 
-#aa-code-example {
+@media (min-width: 768px) {
+  #aa-code-example {
     border: 3px solid grey;
     border-radius: 15px;
     margin-bottom: 1.5rem;
-    padding: 1rem;
+  }
 }
