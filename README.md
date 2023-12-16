@@ -2,7 +2,7 @@
 
 React app version of my guides page :) 
 
-(https://rishu.dev/)https://rishu.dev/
+https://rishu.dev/
 
 Welcome to my Automation Anywhere Dev Journey!
 
