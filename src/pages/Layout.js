@@ -35,7 +35,7 @@ const Layout = () => {
         <>
             <Navbar className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand as={Link} to={"/aa360-ra"}>
+                    <Navbar.Brand as={Link} to={"/"}>
                         <img
                             alt="Automation Anywhere Guides Logo"
                             src={brandImage}
@@ -46,10 +46,10 @@ const Layout = () => {
                         A360 Guides
                     </Navbar.Brand>
                     <Nav className="me-auto ms-5">
-                        <Nav.Link as={Link} to={"/aa360-ra"}>Home</Nav.Link>
-                        <Nav.Link as={Link} to={"/aa360-ra/date-time-formats"}>DateTime Formats</Nav.Link>
-                        <Nav.Link as={Link} to="/aa360-ra/guides">Guides</Nav.Link>
-                        <Nav.Link as={Link} to="/aa360-ra/code-viewer">Code Viewer</Nav.Link>
+                        <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
+                        <Nav.Link as={Link} to={"/date-time-formats"}>DateTime Formats</Nav.Link>
+                        <Nav.Link as={Link} to="/guides">Guides</Nav.Link>
+                        <Nav.Link as={Link} to="/code-viewer">Code Viewer</Nav.Link>
                     </Nav>
                     <Nav className={"mb-2 mb-lg-0"}>
                         <Dropdown>

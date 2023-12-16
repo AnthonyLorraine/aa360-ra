@@ -15,7 +15,7 @@ const Guides = () => {
 
     const handleOpenGuide = (event) => {
         let guideName = event.target.dataset.guide
-        navigate(`/aa360-ra/guide/${guideName}`);
+        navigate(`/guide/${guideName}`);
     }
     return (
         <div className={"container d-flex flex-column"}>

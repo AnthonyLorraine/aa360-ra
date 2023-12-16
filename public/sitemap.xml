@@ -5,12 +5,12 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://anthonylorraine.github.io/aa360-ra/date-time-formats</loc>
+        <loc>https://rishu.dev/date-time-formats</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <lastmod>2023-12-16T00:00:00+00:00</lastmod>
         <image:image>
-            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:loc>https://rishu.dev/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
             <image:title>Date and Time Formats Image</image:title>
         </image:image>
         <metadata>
@@ -26,12 +26,12 @@
         </metadata>
     </url>
     <url>
-        <loc>https://anthonylorraine.github.io/aa360-ra/guides</loc>
+        <loc>https://rishu.dev/guides</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <lastmod>2023-12-16T00:00:00+00:00</lastmod>
         <image:image>
-            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:loc>https://rishu.dev/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
             <image:title>Guides Image</image:title>
         </image:image>
         <metadata>
@@ -52,12 +52,12 @@
     </url>
 
     <url>
-        <loc>https://anthonylorraine.github.io/aa360-ra/code-viewer</loc>
+        <loc>https://rishu.dev/code-viewer</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <lastmod>2023-12-16T00:00:00+00:00</lastmod>
         <image:image>
-            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:loc>https://rishu.dev/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
             <image:title>Code Viewer</image:title>
         </image:image>
         <metadata>

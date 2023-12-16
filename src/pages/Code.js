@@ -55,7 +55,7 @@ const Code = ({jsonData, scriptTitle}) => {
     };
     const handleDownload = async () => {
         try {
-            const response = await fetch('/aa360-ra/small_example.json');
+            const response = await fetch('/small_example.json');
             const content = await response.text();
 
             const blob = new Blob([content], {type: 'application/json'});

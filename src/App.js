@@ -13,7 +13,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/aa360-ra"} element={<Layout/>}>
+                <Route path={"/"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path={"date-time-formats"} element={<DateTimeFormats/>}/>
                     <Route path={"guides"} element={<Guides/>}/>
