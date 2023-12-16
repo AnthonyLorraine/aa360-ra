@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://anthonylorraine.github.io/aa360-ra/date-time-formats</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <lastmod>2023-12-16T00:00:00+00:00</lastmod>
+        <image:image>
+            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:title>Date and Time Formats Image</image:title>
+        </image:image>
+        <metadata>
+            <category>DateTime Formats</category>
+            <formats>
+                <format>
+                    <code>yyyyMMdd</code>
+                    <example>20240321</example>
+                    <description>Format used for log files</description>
+                </format>
+
+            </formats>
+        </metadata>
+    </url>
+    <url>
+        <loc>https://anthonylorraine.github.io/aa360-ra/guides</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <lastmod>2023-12-16T00:00:00+00:00</lastmod>
+        <image:image>
+            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:title>Guides Image</image:title>
+        </image:image>
+        <metadata>
+            <category>Guides</category>
+            <guide>
+                <title>Querying Text or CSV files using SQL Syntax</title>
+                <description>
+                    This guide explains how to overcome limitations when reading large text or CSV files in Automation Anywhere.
+                    It introduces the use of the Connect action to establish connections with various databases and file types.
+                    The guide covers prerequisites, installation of ODBC drivers, and provides connection string examples.
+                    Users are guided through setting up a session, reading data with SQL queries, and utilizing loops.
+                    Troubleshooting tips address issues like incorrect data reading, suggesting solutions such as creating XLSX files or defining schema files.
+                    Overall, the guide empowers users to efficiently query and manipulate data from text and CSV files in Automation Anywhere.
+                </description>
+            </guide>
+
+        </metadata>
+    </url>
+
+    <url>
+        <loc>https://anthonylorraine.github.io/aa360-ra/code-viewer</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <lastmod>2023-12-16T00:00:00+00:00</lastmod>
+        <image:image>
+            <image:loc>https://anthonylorraine.github.io/aa360-ra/static/media/logo512.79448c7c5d773d36422c.png</image:loc>
+            <image:title>Code Viewer</image:title>
+        </image:image>
+        <metadata>
+            <category>Code Viewer</category>
+            <description>
+                Allows you to load your script JSON file to preview it in a browser, useful for when you aren't logged into your control room.
+                This code viewer will mostly be used in my guides locally.
+            </description>
+        </metadata>
+    </url>
+</urlset>
