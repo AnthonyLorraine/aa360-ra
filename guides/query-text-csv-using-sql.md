@@ -85,6 +85,7 @@ Col2="ColumnTwoName" Text
 Col3="ColumnThreeName" Integer
 ```
 
+
 ```aacode
 {
   "triggers": [],
