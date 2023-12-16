@@ -50,7 +50,6 @@ export const getPreferredTheme = () => {
 }
 
 (() => {
-    'use strict'
     let storedTheme = getPreferredTheme()
     setTheme(storedTheme)
 

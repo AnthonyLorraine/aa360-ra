@@ -2,8 +2,7 @@ import {Link, Outlet} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import brandImage from "../static/media/logo512.png";
-import {Dropdown, DropdownButton, Nav, NavbarToggle} from "react-bootstrap";
-import {Button} from "bootstrap";
+import {Dropdown, Nav} from "react-bootstrap";
 import {getPreferredTheme, setTheme, showActiveTheme} from "../static/darkMode";
 
 const Layout = () => {

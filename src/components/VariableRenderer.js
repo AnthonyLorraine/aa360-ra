@@ -1,13 +1,14 @@
-import {Dropdown, Nav, NavbarToggle, NavDropdown} from "react-bootstrap";
+import {Dropdown} from "react-bootstrap";
 import {forwardRef} from "react";
 import {getIconByType} from "../functions/Icons";
 
 const VariableRenderer = ({variable, index}) => {
 
     const CustomDropdownToggle = forwardRef(({children, onClick}, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a
             className={"text-muted"}
-            href=""
+            href={""}
             ref={ref}
             onClick={(e) => {
                 e.preventDefault();
