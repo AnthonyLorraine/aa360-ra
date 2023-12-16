@@ -1,14 +1,20 @@
 import {useContext, useEffect, useState} from "react";
-import Node from "../components/Node";
 import VariableList from "../components/VariableList";
 import PropertiesContext from "../context/PropertiesContext";
 import PropertyRenderer from "../components/PropertyRenderer";
 import NodeList from "../components/NodeList";
 
 
-const Code = () => {
-    const [loadedData, setLoadedData] = useState(null);
+const Code = ({jsonData, scriptTitle}) => {
+    let jsonDataProvided = false
+    if (jsonData) {
+        localStorage.removeItem("json_data");
+        localStorage.setItem("json_data", JSON.stringify(jsonData));
+        jsonDataProvided = true
+    }
+    const [loadedData, setLoadedData] = useState(jsonData);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [titleName, setTitleName] = useState(scriptTitle);
     const {currentProperty} = useContext(PropertiesContext);
 
     useEffect(() => {
@@ -29,7 +35,7 @@ const Code = () => {
     const handleFileChange = async (event) => {
         const fileInput = event.target;
         const file = fileInput.files[0];
-
+        setTitleName(file.name)
         if (file) {
             const reader = new FileReader();
 
@@ -66,9 +72,7 @@ const Code = () => {
         }
     };
     const handleClearData = () => {
-        // Clear data from localStorage
         localStorage.removeItem("json_data");
-        // Reset state
         setLoadedData(null);
     };
 
@@ -78,9 +82,9 @@ const Code = () => {
         {loadedData ? (
             <div className={"d-flex flex-column"}>
                 <div className={"d-flex justify-content-between"}>
-                    <span className={"h1"}>Loaded Script</span>
+                    <span className={"h1 text-capitalize"}>{titleName}</span>
                     <div>
-                        <button className={"btn btn-outline-danger"} onClick={handleClearData}>Reset</button>
+                        {jsonDataProvided ? "" : <button className={"btn btn-outline-danger"} onClick={handleClearData}>Reset</button>}
                     </div>
                 </div>
 

@@ -48,7 +48,7 @@ const Layout = () => {
                     <Nav className="me-auto ms-5">
                         <Nav.Link as={Link} to={"/aa360-ra"}>Home</Nav.Link>
                         <Nav.Link as={Link} to={"/aa360-ra/date-time-formats"}>DateTime Formats</Nav.Link>
-                        <Nav.Link as={Link} to="/aa360-ra">Guides</Nav.Link>
+                        <Nav.Link as={Link} to="/aa360-ra/guides">Guides</Nav.Link>
                         <Nav.Link as={Link} to="/aa360-ra/code-viewer">Code Viewer</Nav.Link>
                     </Nav>
                     <Nav className={"mb-2 mb-lg-0"}>

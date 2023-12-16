@@ -11,3 +11,21 @@
 .node-effect:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.cursor-pointer {
+    cursor: pointer;
+}
+#guide-container > div > h2 {
+    text-align: center;
+    padding-top: 3rem;
+}
+#guide-container > div > h3 {
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+
+#aa-code-example {
+    border: 3px solid grey;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}

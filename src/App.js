@@ -6,6 +6,8 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import DateTimeFormats from "./pages/DateTimeFormats"
 import Code from "./pages/Code";
+import Guides from "./pages/Guides";
+import Guide from "./pages/Guide";
 
 function App() {
     return (
@@ -14,6 +16,8 @@ function App() {
                 <Route path={"/aa360-ra"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path={"date-time-formats"} element={<DateTimeFormats/>}/>
+                    <Route path={"guides"} element={<Guides/>}/>
+                    <Route path={"guide/:guideName"} element={<Guide/>}/>
                     <Route path={"code-viewer"} element={<Code/>}/>
                 </Route>
             </Routes>
