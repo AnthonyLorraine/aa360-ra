@@ -8,6 +8,8 @@ import DateTimeFormats from "./pages/DateTimeFormats"
 import Code from "./pages/Code";
 import Guides from "./pages/Guides";
 import Guide from "./pages/Guide";
+import References from "./pages/References";
+import Licence from "./pages/Licence";
 
 function App() {
     return (
@@ -19,6 +21,8 @@ function App() {
                     <Route path={"guides"} element={<Guides/>}/>
                     <Route path={"guide/:guideName"} element={<Guide/>}/>
                     <Route path={"code-viewer"} element={<Code/>}/>
+                    <Route path={"references"} element={<References/>}/>
+                    <Route path={"licence"} element={<Licence/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

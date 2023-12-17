@@ -1,32 +1,57 @@
 .text-purple {
     color: #a62ece !important;
 }
+
 .bg-disabled {
     color: #222426 !important;
 }
+
 .node-effect {
     transition: background-color 50ms ease-in-out;
 
 }
+
 .node-effect:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
+
 #guide-container > div > h2 {
     text-align: center;
     padding-top: 3rem;
 }
+
 #guide-container > div > h3 {
     padding-bottom: 1rem;
     padding-top: 3rem;
 }
 
 @media (min-width: 768px) {
-  #aa-code-example {
-    border: 3px solid grey;
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
-  }
+    #aa-code-example {
+        border: 3px solid grey;
+        border-radius: 15px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.aag-green-bg {
+    background-color: #00ac00;
+}
+.aag-green-text {
+   color: #00ac00;
+}
+
+#coffee-cup:hover {
+    background-color: transparent;
+    color: #00ac00;
+    text-shadow: #fff 0 0 20px;
+    transform: scale(2);
+    transition: text-shadow 100ms ease-in-out, transform 100ms ease-in-out;
+}
+
+.no-background {
+    background-color: transparent!important;
 }
