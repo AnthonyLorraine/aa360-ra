@@ -8,11 +8,11 @@ const Guides = () => {
         name: "Querying Text or CSV files using SQL Syntax",
         summary: "This guide explains how to overcome limitations when reading large text or CSV files in Automation Anywhere. It introduces the use of the Connect action to establish connections with various databases and file types. The guide covers prerequisites, installation of ODBC drivers, and provides connection string examples. Users are guided through setting up a session, reading data with SQL queries, and utilizing loops. Troubleshooting tips address issues like incorrect data reading, suggesting solutions such as creating XLSX files or defining schema files. Overall, the guide empowers users to efficiently query and manipulate data from text and CSV files in Automation Anywhere."
     },
-    //     {
-    //     file: "query-text-csv-using-sql",
-    //     name: "Placeholder 1",
-    //     summary: "This guide explains how to overcome limitations when reading large text or CSV files in Automation Anywhere. It introduces the use of the Connect action to establish connections with various databases and file types. The guide covers prerequisites, installation of ODBC drivers, and provides connection string examples. Users are guided through setting up a session, reading data with SQL queries, and utilizing loops. Troubleshooting tips address issues like incorrect data reading, suggesting solutions such as creating XLSX files or defining schema files. Overall, the guide empowers users to efficiently query and manipulate data from text and CSV files in Automation Anywhere."
-    // }
+        {
+            file: "promoting-code-from-dev-to-prod",
+            name: "Promoting code from DEV to PROD v27 & Earlier (On-Prem)",
+            summary: "This guide outlines the process of promoting code from Development to Production in on-premises control rooms (v27 or earlier). It emphasizes planning, proper export procedures, and careful import into Production. The steps include exporting code with dependencies, downloading files, and troubleshooting using the audit log."
+        }
     ]
 
     const handleOpenGuide = (event) => {
