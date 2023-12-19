@@ -71,7 +71,7 @@ export class BaseAction {
     }
 
     renderNode() {
-        return <Col>"{this.friendlyName}" action has not Implemented</Col>
+        return <Col>"{this.friendlyName}" action has not yet been implemented</Col>
     }
 
     renderProperties() {
